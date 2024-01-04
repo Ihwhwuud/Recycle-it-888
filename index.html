@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Guide</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #recycleList {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        li {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        #recyclingWays {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .recyclingWay {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: left;
+        }body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #recycleList {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        li {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        #recyclingWays {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .recyclingWay {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Recycling Items</h1>
+
+<ul id="recycleList">
+    <li onclick="showRecyclingWays('Plastic Bottles')">Plastic Bottles</li>
+    <li onclick="showRecyclingWays('Aluminum Cans')">Aluminum Cans</li>
+    <li onclick="showRecyclingWays('Paper')">Paper</li>
+    <li onclick="showRecyclingWays('Glass Bottles')">Glass Bottles</li>
+    <li onclick="showRecyclingWays('Electronic Waste')">Electronic Waste</li>
+    <li onclick="showRecyclingWays('Clothing')">Clothing</li>
+    <li onclick="showRecyclingWays('Tires')">Tires</li>
+    <li onclick="showRecyclingWays('Batteries')">Batteries</li>
+    <li onclick="showRecyclingWays('Plastic Bags')">Plastic Bags</li>
+    <li onclick="showRecyclingWays('Cans')">Cans</li>
+    <li onclick="showRecyclingWays('Cardboard')">Cardboard</li>
+    <li onclick="showRecyclingWays('Mobile Phones')">Mobile Phones</li>
+    <li onclick="showRecyclingWays('Ink Cartridges')">Ink Cartridges</li>
+    <li onclick="showRecyclingWays('Plastic Containers')">Plastic Containers</li>
+    <li onclick="showRecyclingWays('Scrap Metal')">Scrap Metal</li>
+    <li onclick="showRecyclingWays('Cooking Oil')">Cooking Oil</li>
+    <li onclick="showRecyclingWays('Carpet')">Carpet</li>
+    <li onclick="showRecyclingWays('Styrofoam')">Styrofoam</li>
+    <li onclick="showRecyclingWays('Plastic Toys')">Plastic Toys</li>
+    <li onclick="showRecyclingWays('CDs and DVDs')">CDs and DVDs</li>
+    <li onclick="showRecyclingWays('Mattresses')">Mattresses</li>
+    <li onclick="showRecyclingWays('Holiday Lights')">Holiday Lights</li>
+    <li onclick="showRecyclingWays('Plastic Utensils')">Plastic Utensils</li>
+    <li onclick="showRecyclingWays('Crayons')">Crayons</li>
+    <li onclick="showRecyclingWays('Plastic Plant Pots')">Plastic Plant Pots</li>
+    <li onclick="showRecyclingWays('Disposable Cameras')">Disposable Cameras</li>
+    <li onclick="showRecyclingWays('Plastic Wrap')">Plastic Wrap</li>
+    <li onclick="showRecyclingWays('Paint Cans')">Paint Cans</li>
+    <li onclick="showRecyclingWays('Wine Corks')">Wine Corks</li>
+    <li onclick="showRecyclingWays('Plastic Hangers')">Plastic Hangers</li>
+    <li onclick="showRecyclingWays('Packing Peanuts')">Packing Peanuts</li>
+    <li onclick="showRecyclingWays('Plastic Food Containers')">Plastic Food Containers</li>
+    <li onclick="showRecyclingWays('Corkscrew')">Corkscrew</li>
+    <li onclick="showRecyclingWays('Plastic Cutlery')">Plastic Cutlery</li>
+    <li onclick="showRecyclingWays('Computer Mouse')">Computer Mouse</li>
+</ul>
+
+<div id="recyclingWays"></div>
+
+<script>
+    function showRecyclingWays(item) {
+        var recyclingWaysDiv = document.getElementById('recyclingWays');
+        recyclingWaysDiv.innerHTML = '';
+
+        switch(item) {
+            case 'Plastic Bottles':
+                addRecyclingWay('Recycle through local programs.');
+                addRecyclingWay('Reuse for crafts or storage.');
+                addRecyclingWay('Upcycle into art or home decor.');
+                addRecyclingWay('Donate to schools for projects.');
+                addRecyclingWay('Use as planters for small plants.');
+                break;
+            case 'Aluminum Cans':
+                addRecyclingWay('Take to a recycling center for cash return.');
+                addRecyclingWay('Crush and recycle with curbside pickup.');
+                addRecyclingWay('Create sculptures or artwork.');
+                addRecyclingWay('Reuse as containers for small items.');
+                addRecyclingWay('Donate to charity for fundraising.');
+                break;
+            case 'Paper':
+                addRecyclingWay('Recycle with curbside pickup or local programs.');
+                addRecyclingWay('Use for composting in small amounts.');
+                addRecyclingWay('Shred and use as packaging material.');
+                addRecyclingWay('Create homemade paper.');
+                addRecyclingWay('Donate to animal shelters for bedding.');
+                break;
+            case 'Glass Bottles':
+                addRecyclingWay('Recycle through local programs.');
+                addRecyclingWay('Use as decorative containers.');
+                addRecyclingWay('Create DIY lanterns or candle holders.');
+                addRecyclingWay('Donate to thrift stores for repurposing.');
+                addRecyclingWay('Reuse as vases for flowers.');
+                break;
+            case 'Electronic Waste':
+                addRecyclingWay('Take to an e-waste recycling facility.');
+                addRecyclingWay('Donate working electronics to charities.');
+                addRecyclingWay('Sell or trade-in for newer devices.');
+                addRecyclingWay('Reuse parts for DIY projects.');
+                addRecyclingWay('Participate in electronic recycling events.');
+                break;
+            case 'Clothing':
+                addRecyclingWay('Donate to local charities or thrift stores.');
+                addRecyclingWay('Organize clothing swaps with friends.');
+                addRecyclingWay('Upcycle old clothes into new items.');
+                addRecyclingWay('Use old fabrics for cleaning rags.');
+                addRecyclingWay('Recycle worn-out clothing into textile fibers.');
+                break;
+            case 'Tires':
+                addRecyclingWay('Take to tire recycling facilities.');
+                addRecyclingWay('Create DIY tire swings for kids.');
+                addRecyclingWay('Use as planters for garden decoration.');
+                addRecyclingWay('Turn into outdoor furniture.');
+                addRecyclingWay('Reuse as workout equipment.');
+                break;
+            case 'Batteries':
+                addRecyclingWay('Dispose of according to local battery recycling guidelines.');
+                addRecyclingWay('Use rechargeable batteries to reduce waste.');
+                addRecyclingWay('Recycle at designated drop-off locations.');
+                addRecyclingWay('Participate in battery recycling programs.');
+                addRecyclingWay('Avoid throwing batteries in regular trash.');
+                break;
+            case 'Plastic Bags':
+                addRecyclingWay('Return to grocery store plastic bag recycling bins.');
+                addRecyclingWay('Reuse as trash bags for small bins.');
+                addRecyclingWay('Create plarn (plastic yarn) for crafting.');
+                addRecyclingWay('Use as packaging material for fragile items.');
+                addRecyclingWay('Donate to animal shelters for bedding.');
+                break;
+            case 'Cans':
+                addRecyclingWay('Recycle through local programs.');
+                addRecyclingWay('Use empty cans as containers for organizing.');
+                addRecyclingWay('Turn into lanterns with creative designs.');
+                addRecyclingWay('Create DIY planters for small plants.');
+                addRecyclingWay('Donate to schools for art projects.');
+                break;
+            case 'Cardboard':
+                addRecyclingWay('Flatten and recycle with curbside pickup.');
+                addRecyclingWay('Use cardboard boxes for storage or moving.');
+                addRecyclingWay('Create DIY cardboard furniture.');
+                addRecyclingWay('Cut into shapes for crafting projects.');
+                addRecyclingWay('Donate to local schools for classroom use.');
+                break;
+            case 'Mobile Phones':
+                addRecyclingWay('Donate old phones to charities.');
+                addRecyclingWay('Trade in old phones for discounts on new ones.');
+                addRecyclingWay('Recycle through e-waste collection events.');
+                addRecyclingWay('Remove personal data before recycling.');
+                addRecyclingWay('Repurpose as a dedicated device (music player, etc.).');
+                break;
+            case 'Ink Cartridges':
+                addRecyclingWay('Return to office supply stores for recycling.');
+                addRecyclingWay('Participate in manufacturer ink cartridge return programs.');
+                addRecyclingWay('Refill ink cartridges to reduce waste.');
+                addRecyclingWay('Reuse empty cartridges for DIY projects.');
+                addRecyclingWay('Explore third-party ink cartridge recycling options.');
+                break;
+            case 'Plastic Containers':
+                addRecyclingWay('Recycle through local programs.');
+                addRecyclingWay('Reuse for food storage or organization.');
+                addRecyclingWay('Create DIY planters for small plants.');
+                addRecyclingWay('Turn into art or home decor.');
+                addRecyclingWay('Donate to schools for creative projects.');
+                break;
+            case 'Scrap Metal':
+                addRecyclingWay('Take to local scrap yards for recycling.');
+                addRecyclingWay('Reuse for DIY metal projects.');
+                addRecyclingWay('Donate scrap metal to metalworking programs.');
+                addRecyclingWay('Create sculptures or garden art.');
+                addRecyclingWay('Participate in community metal recycling events.');
+                break;
+            case 'Cooking Oil':
+                addRecyclingWay('Reuse for cooking or frying.');
+                addRecyclingWay('Recycle at designated cooking oil drop-off locations.');
+                addRecyclingWay('Convert into biodiesel (if feasible).');
+                addRecyclingWay('Use as a lubricant for household items.');
+                addRecyclingWay('Dispose of in sealed containers to prevent leaks.');
+                break;
+            case 'Carpet':
+                addRecyclingWay('Check for carpet recycling facilities in your area.');
+                addRecyclingWay('Reuse old carpet for DIY projects.');
+                addRecyclingWay('Donate gently used carpet to local organizations.');
+                addRecyclingWay('Convert into pet mats or scratching posts.');
+                addRecyclingWay('Explore creative upcycling ideas for old carpet.');
+                break;
+            case 'Styrofoam':
+                addRecyclingWay('Look for special styrofoam recycling programs.');
+                addRecyclingWay('Reuse styrofoam for insulation or crafts.');
+                addRecyclingWay('Avoid purchasing excess styrofoam products.');
+                addRecyclingWay('Donate clean styrofoam to local art schools.');
+                addRecyclingWay('Consider alternative packaging materials.');
+                break;
+            case 'Plastic Toys':
+                addRecyclingWay('Donate gently used toys to local charities.');
+                addRecyclingWay('Check for toy recycling programs in your area.');
+                addRecyclingWay('Repurpose old toys for art or DIY projects.');
+                addRecyclingWay('Host a toy swap with friends or neighbors.');
+                addRecyclingWay('Avoid single-use plastic toys when possible.');
+                break;
+            case 'CDs and DVDs':
+                addRecyclingWay('Explore CD and DVD recycling programs.');
+                addRecyclingWay('Donate old discs to libraries or schools.');
+                addRecyclingWay('Upcycle CDs/DVDs into creative decorations.');
+                addRecyclingWay('Repurpose as reflective surfaces in gardens.');
+                addRecyclingWay('Consider digital alternatives to reduce disc waste.');
+                break;
+            case 'Mattresses':
+                addRecyclingWay('Look for mattress recycling facilities in your area.');
+                addRecyclingWay('Donate gently used mattresses to charities.');
+                addRecyclingWay('Consider mattress buy-back programs.');
+                addRecyclingWay('Explore creative upcycling projects for old mattresses.');
+                addRecyclingWay('Dispose of mattresses responsibly to reduce landfill waste.');
+                break;
+            case 'Holiday Lights':
+                addRecyclingWay('Check for holiday light recycling programs.');
+                addRecyclingWay('Reuse holiday lights for multiple seasons.');
+                addRecyclingWay('Dispose of broken lights at e-waste recycling centers.');
+                addRecyclingWay('Consider LED lights for energy efficiency.');
+                addRecyclingWay('Explore DIY projects using old holiday lights.');
+                break;
+            case 'Plastic Utensils':
+                addRecyclingWay('Avoid single-use plastic utensils when possible.');
+                addRecyclingWay('Switch to reusable or biodegradable alternatives.');
+                addRecyclingWay('Recycle plastic utensils through local programs.');
+                addRecyclingWay('Encourage restaurants to use eco-friendly utensils.');
+                addRecyclingWay('Consider carrying your own reusable utensils.');
+                break;
+            case 'Crayons':
+                addRecyclingWay('Donate gently used crayons to schools or daycares.');
+                addRecyclingWay('Explore crayon recycling programs.');
+                addRecyclingWay('Melt old crayons to create new multi-colored ones.');
+                addRecyclingWay('Use broken crayons for creative arts and crafts.');
+                addRecyclingWay('Consider using eco-friendly and non-toxic crayon alternatives.');
+                break;case 'Plastic Plant Pots':
+                addRecyclingWay('Check with local garden centers for recycling programs.');
+                addRecyclingWay('Reuse plastic plant pots for gardening.');
+                addRecyclingWay('Donate clean pots to community gardening projects.');
+                addRecyclingWay('Repurpose pots for organizing small items.');
+                addRecyclingWay('Consider biodegradable or alternative materials for pots.');
+                break;
+            case 'Disposable Cameras':
+                addRecyclingWay('Return disposable cameras to photography stores.');
+                addRecyclingWay('Recycle empty disposable camera shells.');
+                addRecyclingWay('Consider using digital cameras for reduced waste.');
+                addRecyclingWay('Explore DIY projects with old camera components.');
+                addRecyclingWay('Dispose of camera batteries separately according to guidelines.');
+                break;
+            case 'Plastic Wrap':
+                addRecyclingWay('Avoid excessive use of plastic wrap when possible.');
+                addRecyclingWay('Reuse plastic wrap for covering food items.');
+                addRecyclingWay('Look for plastic wrap recycling programs.');
+                addRecyclingWay('Explore eco-friendly alternatives like beeswax wraps.');
+                addRecyclingWay('Reduce overall plastic use by opting for reusable containers.');
+                break;
+            case 'Paint Cans':
+                addRecyclingWay('Take empty paint cans to designated recycling centers.');
+                addRecyclingWay('Reuse old paint cans for storing small items.');
+                addRecyclingWay('Donate unused paint to community projects.');
+                addRecyclingWay('Consider using eco-friendly and low-VOC paints.');
+                addRecyclingWay('Dispose of paint properly to avoid environmental harm.');
+                break;
+            case 'Wine Corks':
+                addRecyclingWay('Look for cork recycling programs or collection bins.');
+                addRecyclingWay('Reuse wine corks for various craft projects.');
+                addRecyclingWay('Donate corks to schools or art organizations.');
+                addRecyclingWay('Explore eco-friendly wine closures as alternatives.');
+                addRecyclingWay('Consider purchasing wine with recycled or sustainable corks.');
+                break;
+            case 'Plastic Hangers':
+                addRecyclingWay('Reuse plastic hangers for organizing clothes or accessories.');
+                addRecyclingWay('Donate gently used hangers to secondhand stores.');
+                addRecyclingWay('Check for plastic hanger recycling programs.');
+                addRecyclingWay('Switch to eco-friendly and sustainable hanger alternatives.');
+                addRecyclingWay('Consider buying clothes that use minimal packaging.');
+                break;
+            case 'Packing Peanuts':
+                addRecyclingWay('Reuse packing peanuts for shipping or storage.');
+                addRecyclingWay('Check with shipping stores for packing peanut recycling.');
+                addRecyclingWay('Look for biodegradable or compostable packing peanuts.');
+                addRecyclingWay('Avoid using excessive packaging for shipped items.');
+                addRecyclingWay('Dispose of packing peanuts responsibly to reduce environmental impact.');
+                break;
+            case 'Plastic Food Containers':
+                addRecyclingWay('Recycle plastic food containers through local programs.');
+                addRecyclingWay('Clean and reuse containers for food storage.');
+                addRecyclingWay('Check for plastic container recycling symbols.');
+                addRecyclingWay('Explore alternatives like glass or stainless steel containers.');
+                addRecyclingWay('Reduce single-use plastic by opting for sustainable packaging.');
+                break;
+            case 'Corkscrew':
+                addRecyclingWay('Donate unused or old corkscrews to thrift stores.');
+                addRecyclingWay('Reuse corkscrews for opening bottles or DIY projects.');
+                addRecyclingWay('Look for metal recycling programs for metal corkscrews.');
+                addRecyclingWay('Consider eco-friendly and alternative wine opening methods.');
+                addRecyclingWay('Minimize unnecessary kitchen gadgets to reduce waste.');
+                break;
+            case 'Plastic Cutlery':
+                addRecyclingWay('Avoid single-use plastic cutlery when possible.');
+                addRecyclingWay('Switch to reusable or compostable cutlery alternatives.');
+                addRecyclingWay('Recycle plastic cutlery through local programs.');
+                addRecyclingWay('Encourage restaurants to use eco-friendly utensils.');
+                addRecyclingWay('Consider carrying your own reusable cutlery set.');
+                break;
+            case 'Computer Mouse':
+                addRecyclingWay('Donate working computer mice to schools or nonprofits.');
+                addRecyclingWay('Recycle non-functional computer mice through e-waste programs.');
+                addRecyclingWay('Explore electronics recycling events for computer peripherals.');
+                addRecyclingWay('Check for manufacturer take-back programs.');
+                addRecyclingWay('Consider upgrading to more sustainable and durable computer accessories.');
+                break;
+            default:
+                break;
+        }
+    }
+
+    function addRecyclingWay(way) {
+        var recyclingWaysDiv = document.getElementById('recyclingWays');
+        var wayParagraph = document.createElement('p');
+        wayParagraph.textContent = way;
+        recyclingWaysDiv.appendChild(wayParagraph);
+    }
+</script>
+
+</body>
+</html>
